@@ -5,6 +5,7 @@ import {
   Vector3,
   HemisphericLight,
   MeshBuilder,
+  ArcRotateCamera,
 } from "@babylonjs/core";
 export class BabylonScene {
   scene: Scene;
@@ -20,8 +21,16 @@ export class BabylonScene {
   }
   CreateScene(): Scene {
     const scene = new Scene(this.engine);
-    const Camera = new FreeCamera("camera", new Vector3(0, 1, -5), this.scene);
-    Camera.attachControl();
+    const camera = new ArcRotateCamera(
+      "camera",
+      0,
+      0,
+      10,
+      new Vector3(0, 0, 0),
+      this.scene
+    );
+    camera.setPosition(new Vector3(0, 0, 20));
+    camera.attachControl();
     const light = new HemisphericLight(
       "light",
       new Vector3(0, 1, 0),
