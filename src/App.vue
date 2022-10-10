@@ -2,11 +2,11 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 
-import Car from "./components/Car.vue";
+import Editor from "./components/Editor.vue";
 </script>
 
 <template>
-  <Car width="256" height="128" />
+  <Editor data=""></Editor>
 </template>
 
 <style scoped></style>
